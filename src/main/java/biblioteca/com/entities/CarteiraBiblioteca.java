@@ -24,4 +24,9 @@ public class CarteiraBiblioteca {
     @OneToOne
     @MapsId
     private Usuario usuario;
+
+    public CarteiraBiblioteca(Date dataEmissao, boolean isValid) {
+        this.dataEmissao = dataEmissao;
+        this.isValid = isValid;
+    }
 }

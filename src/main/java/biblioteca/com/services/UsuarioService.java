@@ -5,6 +5,9 @@ import biblioteca.com.entities.Usuario;
 import biblioteca.com.repositories.UsuarioRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+import java.util.UUID;
+
 @Service
 public class UsuarioService {
 
@@ -14,6 +17,7 @@ public class UsuarioService {
         this.usuarioRepository = usuarioRepository;
     }
 
+
     public UsuarioDTO criarUsuario(UsuarioDTO dto) {
         Usuario usuario = new Usuario(dto.getNome(), dto.getEmail());
         usuarioRepository.save(usuario);
@@ -21,8 +25,7 @@ public class UsuarioService {
         return usuarioDto;
     }
 
-    public UsuarioDTO mostrarUsuarioPorIs() {
-
-        return new UsuarioDTO();
+    public Optional<Usuario> mostrarUsuarioPorEmail(String email) {
+        return usuarioRepository.findByEmail(email);
     }
 }
