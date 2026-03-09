@@ -16,7 +16,7 @@ import java.util.Date;
 public class CarteiraBibliotecaDTO {
 
     @NotBlank
-    @FutureOrPresent
+    @FutureOrPresent // Perguntei para a IA se existia uma validação para saber se a data não é menor que a data de hoje
     private Date dataEmissao;
     private boolean isValid;
 }
