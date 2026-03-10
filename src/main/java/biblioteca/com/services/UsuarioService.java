@@ -35,8 +35,8 @@ public class UsuarioService {
 //        Não sei como pegar o id do usuário para setar a chave estrangeira na carteiraBiblioteca
 //        carteiraBibliotecaService.criarCarteiraBiblioteca(carteiraBibliotecaDTO);
 
-        UsuarioDTO usuarioDto = new UsuarioDTO(usuario.getNome(), usuario.getEmail());
-        return usuarioDto;
+        UsuarioDTO usuarioDTO = new UsuarioDTO(usuario.getNome(), usuario.getEmail());
+        return usuarioDTO;
     }
 
     public Optional<Usuario> mostrarUsuarioPorID(long id) {
